@@ -4,8 +4,8 @@ import ContactForm from 'components/ContactForm/ContactForm';
 import Section from "components/Section/Section";
 import Contacts from "components/Contacts/Contacts"; 
 import { ToastContainer } from 'react-toastify';
-import { useAuth } from 'shared/hooks/useAuth';
-import { Navigate } from 'react-router-dom';
+// import { useAuth } from 'shared/hooks/useAuth';
+// import { Navigate } from 'react-router-dom';
 
 export default function ContactsPage() {
 //  const isUserLogin = useAuth();

@@ -1,6 +1,6 @@
 import RergisterForm from 'components/RergisterForm/RergisterForm'
-import { Navigate } from 'react-router-dom';
-import { useAuth } from 'shared/hooks/useAuth';
+// import { Navigate } from 'react-router-dom';
+// import { useAuth } from 'shared/hooks/useAuth';
 
 export default function RegisterPages() {
   // const isUserLogin = useAuth();
