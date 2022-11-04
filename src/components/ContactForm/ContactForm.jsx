@@ -7,12 +7,12 @@ import { addContact } from 'redux/operetions';
 
 export default function ContactForm() {
 const [name, setName] = useState("");
-const [phone, setPhone] = useState("");
+const [number, setNumber] = useState("");
 
 const dispatch = useDispatch();
 
 const nameId = nanoid();
-const phoneId = nanoid();
+const numberId = nanoid();
 
 
 const handleChange = (evt) => {
@@ -21,8 +21,8 @@ const handleChange = (evt) => {
       case 'name':
         setName(value);
         break;
-       case 'phone':
-        setPhone(value);
+       case 'number':
+        setNumber(value);
         break;
     
       default:
@@ -32,14 +32,16 @@ const handleChange = (evt) => {
   
 const handleSubmit = (evt) => {
   evt.preventDefault();
-      onAddContact({ name, phone });
+      onAddContact({ name, number });
       setName("");
-      setPhone("");
+      setNumber("");
     }
 
 
 const onAddContact = (contact) => {
   const action = addContact(contact);
+      console.log("contact", contact);
+
       dispatch(action);
 }
   
@@ -57,15 +59,15 @@ const onAddContact = (contact) => {
           value={name}
           onChange={handleChange}
         />
-         <label htmlFor={phoneId}>Phone</label>
+         <label htmlFor={numberId}>Number</label>
          <Input
-          id={phoneId}
+          id={numberId}
           type="tel"
-          name="phone"
+          name="number"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-          title="Phone phone must be digits and can contain spaces, dashes, parentheses and can start with +"
+          title="Number number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
-          value={phone}
+          value={number}
           onChange={handleChange}
        />  
          <Button type="sybmit">Add contact</Button>

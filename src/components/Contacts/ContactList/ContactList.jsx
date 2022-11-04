@@ -8,8 +8,8 @@ export default function ContactList({ items }) {
   return (
     <List>
       {
-        items.map(({ name, phone, id }) => (
-          <ContactItem key={id} id={id} name={name} phone={phone} />
+        items.map(({ name, number, id }) => (
+          <ContactItem key={id} id={id} name={name} phone={number} />
         ))}
     </List>
   );

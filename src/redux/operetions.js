@@ -1,28 +1,30 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
+// import instance from "api/authorization";
 
-const isDublicate = ({ name, phone }, contacts) => {
+const isDublicate = ({ name, number }, contacts) => {
     const normalizedName = name.toLowerCase();
-    const normalizedPhone = phone.toLowerCase();
+    const normalizedPhone = number.toLowerCase();
 
     const result = contacts.find((item) => {
-        return (normalizedName === item.name.toLowerCase() && item.phone.toLowerCase() === normalizedPhone);
+        return (normalizedName === item.name.toLowerCase() && item.number.toLowerCase() === normalizedPhone);
     });
         return Boolean(result);
 };
 
-const URL = "https://63584f04c26aac906f407738.mockapi.io";
+// const URL = "https://connections-api.herokuapp.com/";
 
-const instance = axios.create({
-    baseURL: URL,
-});
+// const instance = axios.create({
+//     baseURL: URL,
+// });
 
 export const fetchContacts = createAsyncThunk(
     "contacts/fetchAll",
     async (_, thunkAPI) => {
     try {
-        const {data} = await instance.get("/contacts");
+        const { data } = await axios.get("/contacts");
+        console.log(data);
         return data;
     } catch (error) {
         return thunkAPI.rejectWithValue(error.message);
@@ -32,9 +34,12 @@ export const fetchContacts = createAsyncThunk(
 export const addContact = createAsyncThunk(
     "contacts/add",
     async (contact, thunkAPI) => {
+        console.log(contact);
     try {
-        const response = await instance.post(
+        const response = await axios.post(
             "/contacts", contact);
+        console.log("response",response.data);
+        
         return response.data;
     } catch (error) {
         return thunkAPI.rejectWithValue(error.message);
@@ -64,7 +69,7 @@ export const deleteContact = createAsyncThunk(
     "contacts/delete",
     async (contactID, thunkAPI) => {
     try {
-        const response = await instance.delete(
+        const response = await axios.delete(
             `/contacts/${contactID}`);
         return response.data;
     } catch (error) {

@@ -8,9 +8,9 @@ export const selectFilterdContacts = ({ contacts, filter }) => {
             return contacts.items;  
          }  
         const normalizedFilter = filter.toLocaleLowerCase();
-        const filterdContacts = contacts.items.filter(({name, phone}) => {
+        const filterdContacts = contacts.items.filter(({name, number}) => {
         const normalizedName = name.toLocaleLowerCase();
-        const normalizedNumber = phone.toLocaleLowerCase();
+        const normalizedNumber = number.toLocaleLowerCase();
         const result = normalizedName.includes(normalizedFilter) || normalizedNumber.includes(normalizedFilter);
             return result;
         }) 
