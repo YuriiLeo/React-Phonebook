@@ -1,7 +1,7 @@
 import { TbLogout } from "react-icons/tb";
 import { useDispatch, useSelector} from "react-redux"
-import { logOut } from "redux/auth/auth-operations";
-import { selectUser } from "redux/auth/auth-selectors";
+import { logOut } from "redux/auth/authOperations";
+import { selectUser } from "redux/auth/authSelectors";
 
 
 export default function NavbarUser() {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container } from "components/App/App.styled";
-import ContactForm from 'components/ContactForm/ContactForm';
+import ContactForm from 'components/Contacts/ContactForm/ContactForm';
 import Section from "components/Section/Section";
 import Contacts from "components/Contacts/Contacts"; 
 import { ToastContainer } from 'react-toastify';

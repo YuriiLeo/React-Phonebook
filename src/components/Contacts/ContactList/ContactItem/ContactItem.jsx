@@ -2,10 +2,11 @@ import PropTypes from 'prop-types';
 import { Wrapper, Item, Button } from './ContactItem.styled';
 import { MdContactPhone } from 'react-icons/md';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectContacts, selectFilterdContacts } from 'redux/selectors';
-import { deleteContact } from 'redux/operetions';
-import { setFilter } from 'redux/filterSlice';
+import { selectContacts } from 'redux/contacts/contactsSelectors';
+import { deleteContact } from 'redux/contacts/contactsOperetions';
+import { setFilter } from 'redux/filter/filterSlice';
 import { toast } from 'react-toastify';
+import { selectFilterdContacts } from 'redux/filter/filterSelectors';
 
 export default function ContactItem({ id, name, phone }) {  
   const contacts = useSelector(selectFilterdContacts);

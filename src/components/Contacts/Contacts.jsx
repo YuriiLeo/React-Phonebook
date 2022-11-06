@@ -1,11 +1,12 @@
 import ContactList from 'components/Contacts/ContactList/ContactList';
-import Filter from 'components/Filter/Filter';
+import Filter from 'components/Contacts/Filter/Filter';
 import Section from "components/Section/Section";
 import Notification from "components/Notification/Notification";
 import 'react-toastify/dist/ReactToastify.css';
 import { useSelector, useDispatch } from "react-redux";
-import { selectContacts, selectFilter, selectFilterdContacts } from 'redux/selectors';
-import { fetchContacts } from "redux/operetions";
+import { selectContacts} from 'redux/contacts/contactsSelectors';
+import { selectFilter, selectFilterdContacts } from 'redux/filter/filterSelectors';
+import { fetchContacts } from "redux/contacts/contactsOperetions";
 import { useEffect } from "react";
 import { Wrapper } from './Contacts.styled';
 

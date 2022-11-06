@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 // import axios from "axios";
-import { register, login, logout, getCurrentUser } from "../../api/authorization";
+import { register, login, logout, getCurrentUser } from "../../shared/api/authorization";
 
 // import * as api from "../../api/authorization";
 

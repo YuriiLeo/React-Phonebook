@@ -11,12 +11,12 @@ import SharedLayout from "components/SharedLayout/SharedLayout";
 // import NotFoundPage from "pages/NotFoundPage/NotFoundPage";
 // import HomePage from "pages/HomePage/HomePage";
 import { lazy } from "react";
-import { current } from "redux/auth/auth-operations";
+import { current } from "redux/auth/authOperations";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import PublicRoute from "components/PublicRoute/PublicRoute";
 import PrivateRoute from "components/PrivateRoute/PrivateRoute";
-import { SelectIsLoadingUserStatus } from "redux/auth/auth-selectors";
+import { SelectIsLoadingUserStatus } from "redux/auth/authSelectors";
 
 const HomePage = lazy(() => import('../../pages/HomePage/HomePage'));
 const RegisterPages = lazy(() => import('../../pages/RegisterPages/RegisterPages'));

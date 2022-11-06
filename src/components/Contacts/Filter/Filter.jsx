@@ -1,9 +1,9 @@
 import React from 'react';
 import { nanoid } from 'nanoid';
 import { Input } from './Filter.styled';
-import { selectFilter } from 'redux/selectors';
+import { selectFilter } from 'redux/filter/filterSelectors';
 import { useDispatch, useSelector } from "react-redux";
-import { setFilter } from 'redux/filterSlice';
+import { setFilter } from 'redux/filter/filterSlice';
 
 export default function Filter() {
     const filter = useSelector(selectFilter);

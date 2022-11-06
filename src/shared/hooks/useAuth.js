@@ -1,5 +1,5 @@
 const { useSelector } = require("react-redux")
-const { selectIsLogin } = require("redux/auth/auth-selectors")
+const { selectIsLogin } = require("redux/auth/authSelectors")
 
 
 export const useAuth = () => {
