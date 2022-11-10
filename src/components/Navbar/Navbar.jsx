@@ -12,7 +12,6 @@ export default function Navbar() {
           <div>
               <div>
                   <NavbarMenu />
-                  {/* {isUserLogin && <NavbarMenu />} */}
                   {!isUserLogin ?
                   <NavbarAuth /> :
                   <NavbarUser/>}

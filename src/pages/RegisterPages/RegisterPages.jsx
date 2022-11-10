@@ -8,8 +8,7 @@ export default function RegisterPages() {
   return (
   // <>
   //   { !isUserLogin ?
-      <div>
-      <h1>RegisterPages</h1>
+    <div>
       <RergisterForm />
     </div > 
   //   : <Navigate to={"/contacts"} />

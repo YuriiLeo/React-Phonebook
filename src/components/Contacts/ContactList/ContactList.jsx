@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { List } from './ContactList.styled';
 import ContactItem from 'components/Contacts/ContactList/ContactItem/ContactItem';
+import { Divider } from '@mui/material';
 
 
 export default function ContactList({ items }) {

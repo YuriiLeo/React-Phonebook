@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Wrapper, Item, Button } from './ContactItem.styled';
+import { Wrapper, Item } from './ContactItem.styled';
 import { MdContactPhone } from 'react-icons/md';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts } from 'redux/contacts/contactsSelectors';
@@ -7,6 +7,11 @@ import { deleteContact } from 'redux/contacts/contactsOperetions';
 import { setFilter } from 'redux/filter/filterSlice';
 import { toast } from 'react-toastify';
 import { selectFilterdContacts } from 'redux/filter/filterSelectors';
+import { Chip, Divider, IconButton, Stack } from '@mui/material';
+import ContactPhoneOutlinedIcon from '@mui/icons-material/ContactPhoneOutlined';
+import Button from '@mui/material/Button';
+import DeleteIcon from '@mui/icons-material/Delete';
+
 
 export default function ContactItem({ id, name, phone }) {  
   const contacts = useSelector(selectFilterdContacts);
@@ -20,7 +25,7 @@ export default function ContactItem({ id, name, phone }) {
     if (contacts.length === 1) {
            dispatch(setFilter(""));
            
-        toast.info('No more contacts matching the filter.', {
+        toast.info('No more contacts.', {
         position: "top-left",
         autoClose: 3000,
         hideProgressBar: false,
@@ -34,14 +39,28 @@ export default function ContactItem({ id, name, phone }) {
     }  
     
   return (
+    <>
     <Item key={id}>
-        <MdContactPhone size={18}/>
+        <ContactPhoneOutlinedIcon size={18}/>
         <Wrapper>
             <span>{name}: </span>
             <span>{phone}</span>
        </Wrapper> 
-            {isLoading ? <Button>Deleting...</Button> : <Button type='button' onClick={() => removeContact(id)} >Delete</Button>}
-     </Item>
+            {/* <Button type='button' onClick={() => removeContact(id)} >Delete</Button> */}
+      {/* {isLoading ? <Button>Deleting...</Button> : <Button type='button' onClick={() => removeContact(id)} >Delete</Button>} */}
+            {/* <Button type='button' disabled={isLoading} onClick={() => removeContact(id)} >Delete</Button> */}
+            {/* <Button size="small" variant="outlined" startIcon={<DeleteIcon />} type='button' disabled={isLoading} onClick={() => removeContact(id)} /> */}
+     <IconButton size="large" aria-label="delete" type='button' disabled={isLoading} onClick={() => removeContact(id)} >
+  <DeleteIcon fontSize='small' />
+</IconButton>
+      </Item>
+      {/* <Stack direction="row" spacing={1}> */}
+      {/* <Chip label="Deletable" onDelete={handleDelete} /> */}
+      {/* <Chip label={`${name}: ${phone}`} variant="outlined" onDelete={() => removeContact(id)} />
+      </Stack> */}
+      
+            <Divider />
+      </>
   )
 }
 
