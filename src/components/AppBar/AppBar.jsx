@@ -13,7 +13,7 @@ import { PersonAdd } from '@mui/icons-material';
 import LoginIcon from '@mui/icons-material/Login';
 // My Component 
 import { useAuth } from 'shared/hooks/useAuth';
-import NavbarUser from 'components/Navbar/NavbarUser/NavbarUser';
+import NavbarUser from 'components/AppBar/AppBarUser/AppBarUser';
 
 export default function MenuAppBar() {
   const isUserLogin = useAuth();
