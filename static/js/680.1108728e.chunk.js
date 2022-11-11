@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkreact_hw_08_phonebook=self.webpackChunkreact_hw_08_phonebook||[]).push([[680],{680:function(e,n,t){t.r(n),t.d(n,{default:function(){return r}});t(2791);var o=t(184);function r(){return(0,o.jsx)("div",{children:"To access contacts, enter your login or register on the site"})}}}]);
-//# sourceMappingURL=680.1108728e.chunk.js.map
