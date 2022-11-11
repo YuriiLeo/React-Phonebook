@@ -8,10 +8,9 @@ import { useEffect } from "react";
 import PublicRoute from "components/PublicRoute/PublicRoute";
 import PrivateRoute from "components/PrivateRoute/PrivateRoute";
 import { SelectIsLoadingUserStatus } from "redux/auth/authSelectors";
-import { Box, Container, CssBaseline, Typography } from "@mui/material";
+// import { Box, Container, CssBaseline, Typography } from "@mui/material";
 
 import Loading from "components/Loading/Loading";
-
 
 const HomePage = lazy(() => import('../../pages/HomePage/HomePage'));
 const RegisterPages = lazy(() => import('../../pages/RegisterPages/RegisterPages'));
