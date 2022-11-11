@@ -16,6 +16,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Container } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import ButtonBase from '@mui/material/ButtonBase';
+import { NavLink } from 'react-router-dom';
 // import { height } from '@mui/system';
 
 const theme = createTheme();
@@ -85,7 +86,7 @@ const ImageMarked = styled('span')(({ theme }) => ({
           // sm={4}
           md={12}
           sx={{
-            backgroundImage: 'url(https://pixabay.com/get/gbc6345c11e19f8d61cf1dcc619bd0804022e80f5e9390c2030688257ae113a3b1b79c267de7dd8cbfec553ae8869b875ebfe2663308c73d541763f4fbc586cb0_1280.jpg)',
+            backgroundImage: 'url(https://source.unsplash.com/random)',
             backgroundRepeat: 'no-repeat',
             backgroundColor: (t) =>
             t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
@@ -103,39 +104,42 @@ const ImageMarked = styled('span')(({ theme }) => ({
             <Typography component="h1" variant="h3" sx={{
               color: "#fff",
               marginTop: 20,
-              opacity: 0.4,
-              backgroundColor: '#000',
+              backgroundColor: 'rgba(117, 190, 218, 0.5)',
+              // opacity: 0.4,
+              // backgroundColor: '#000',
               textAlign: 'center',
             }}>
               To access contacts, enter your login or register on the site
             </Typography>
-               <Box sx={{ display: 'flex', flexWrap: 'wrap',  width: "145px", height: "70px"  }}>
-                 <ImageButton
-                   focusRipple
-                   key={'REGISTER'}
-                   style={{
-                     width: '100%',
-                    height: '100%' ,
-                   }}
-                 >
-          <ImageBackdrop className="MuiImageBackdrop-root" sx={{backgroundColor: 'transparent'}} />
-          <Image>
-            <Typography
-              component="span"
-              variant="subtitle1"
-              color="inherit"
-              sx={{
-                position: 'relative',
-                p: 6,
-                pt: 2,
-                pb: (theme) => `calc(${theme.spacing(1)} + 6px)`,
-              }}
-            >
-              {'REGISTER'}
-                <ImageMarked className="MuiImageMarked-root" />
-              </Typography>
-            </Image>
-          </ImageButton>
+                <Box sx={{ display: 'flex', flexWrap: 'wrap',  width: "145px", height: "70px"  }}>
+                  <ImageButton
+                     focusRipple
+                     key={'REGISTER'}
+                     style={{
+                       width: '100%',
+                      height: '100%' ,
+                     }}
+                >
+                  <NavLink to="/register">
+                     <ImageBackdrop className="MuiImageBackdrop-root" sx={{backgroundColor: 'transparent'}} />
+                        <Image>
+                          <Typography
+                            component="span"
+                            variant="subtitle1"
+                            color="inherit"
+                            sx={{
+                              position: 'relative',
+                              p: 6,
+                              pt: 2,
+                              pb: (theme) => `calc(${theme.spacing(1)} + 6px)`,
+                            }}
+                          >
+                            Register
+                           <ImageMarked className="MuiImageMarked-root" />
+                        </Typography>
+                     </Image>
+                  </NavLink>
+              </ImageButton>
         </Box>
       </Container>
     </Grid>

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { List } from './ContactList.styled';
+import List from '@mui/material/List';
 import ContactItem from 'components/Contacts/ContactList/ContactItem/ContactItem';
 
 export default function ContactList({ items }) {

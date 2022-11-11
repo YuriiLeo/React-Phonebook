@@ -8,7 +8,6 @@ import { useEffect } from "react";
 import PublicRoute from "components/PublicRoute/PublicRoute";
 import PrivateRoute from "components/PrivateRoute/PrivateRoute";
 import { SelectIsLoadingUserStatus } from "redux/auth/authSelectors";
-// import { Box, Container, CssBaseline, Typography } from "@mui/material";
 
 import Loading from "components/Loading/Loading";
 
@@ -41,25 +40,9 @@ export default function App() {
                   <Route path="/contacts" element={<ContactsPage />} />
                 </Route>
                 <Route path="*" element={<NotFoundPage />} />
-
               </Route>
             </Routes>
         } 
     </>
-    
-    // <Routes>
-    //     <Route path="/" element={<SharedLayout/>}>
-    //     <Route index element={<HomePage />} />
-    //     <Route element={<PublicRoute/>}>
-    //        <Route path="/register" element={<RegisterPages />} />
-    //        <Route path="/login" element={<LoginPage />} />
-    //     </Route>
-    //     <Route element={<PrivateRoute/>}>
-    //         <Route path="/contacts" element={<ContactsPage />} />
-    //     </Route>
-    //       <Route path="*" element={<NotFoundPage/>}/>
-    //     </Route>
-    // </Routes>
-
   )
 }
