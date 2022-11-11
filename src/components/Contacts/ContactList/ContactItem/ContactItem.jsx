@@ -1,15 +1,13 @@
 import PropTypes from 'prop-types';
 import { Wrapper, Item } from './ContactItem.styled';
-import { MdContactPhone } from 'react-icons/md';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts } from 'redux/contacts/contactsSelectors';
 import { deleteContact } from 'redux/contacts/contactsOperetions';
 import { setFilter } from 'redux/filter/filterSlice';
 import { toast } from 'react-toastify';
 import { selectFilterdContacts } from 'redux/filter/filterSelectors';
-import { Chip, Divider, IconButton, Stack } from '@mui/material';
+import { Divider, IconButton } from '@mui/material';
 import ContactPhoneOutlinedIcon from '@mui/icons-material/ContactPhoneOutlined';
-import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 
 
