@@ -1,5 +1,5 @@
 // import PropTypes from 'prop-types';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { nanoid } from 'nanoid';
 import { useState } from 'react';
 import { addContact } from 'redux/contacts/contactsOperetions'; 
@@ -15,11 +15,14 @@ import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Accordion, AccordionDetails, AccordionSummary } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { selectContacts } from "redux/contacts/contactsSelectors";
+import LoadingBtn from "shared/button/LoadingButton";
 
 const theme = createTheme();
 
 
 export default function ContactForm() {
+  const { isLoading, error } = useSelector(selectContacts);
 
 const [name, setName] = useState("");
 const [number, setNumber] = useState("");
@@ -109,14 +112,16 @@ const onAddContact = (contact) => {
                 title="Number number must be digits and can contain spaces, dashes, parentheses and can start with +"
                 value={number}
                 onChange={handleChange}
-              />
-              <Button
-                type="submit"
-                variant="outlined"
-                sx={{ mt: 3, mb: 2 }}
-              >
-                Add contact
-              </Button>
+                  />
+           {isLoading && !error ? <LoadingBtn /> : 
+                  <Button
+                     type="submit"
+                         variant="outlined"
+                         fullWidth
+                     sx={{ mt: 3, mb: 2 }}
+                   >
+                      Add contact
+                  </Button>}
                 </Box>
               </AccordionDetails>
            </Accordion>

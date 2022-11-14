@@ -3,6 +3,7 @@ import ContactForm from 'components/Contacts/ContactForm/ContactForm';
 import Contacts from "components/Contacts/Contacts"; 
 import { ToastContainer } from 'react-toastify';
 import { Container, CssBaseline, Grid } from "@mui/material";
+import contactsImg from '../../shared/img/contactsPage.jpg';
 
 export default function ContactsPage() {
 
@@ -11,15 +12,12 @@ export default function ContactsPage() {
         <CssBaseline />
           <Grid container component="div"
           xs={12}
-          md={12}
           sx={{
-            backgroundImage: 'url(https://source.unsplash.com/random)',
-            backgroundRepeat: 'no-repeat',
-            backgroundColor: (t) =>
-              t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
+            backgroundImage: `url(${contactsImg})`,
+            backgroundRepeat: '#5858f4',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            height: '90vh',
+            // height: '100vh',
             minHeight: '500px',
             maxHeight: '1500px',
           }}
