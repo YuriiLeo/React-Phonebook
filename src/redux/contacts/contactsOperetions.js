@@ -1,7 +1,6 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
-// import instance from "api/authorization";
 
 const isDublicate = ({ name, number }, contacts) => {
     const normalizedName = name.toLowerCase();
@@ -13,18 +12,11 @@ const isDublicate = ({ name, number }, contacts) => {
         return Boolean(result);
 };
 
-// const URL = "https://connections-api.herokuapp.com/";
-
-// const instance = axios.create({
-//     baseURL: URL,
-// });
-
 export const fetchContacts = createAsyncThunk(
     "contacts/fetchAll",
     async (_, thunkAPI) => {
     try {
         const { data } = await axios.get("/contacts");
-        console.log(data);
         return data;
     } catch (error) {
         return thunkAPI.rejectWithValue(error.message);
@@ -34,11 +26,9 @@ export const fetchContacts = createAsyncThunk(
 export const addContact = createAsyncThunk(
     "contacts/add",
     async (contact, thunkAPI) => {
-        console.log(contact);
     try {
         const response = await axios.post(
             "/contacts", contact);
-        console.log("response",response.data);
         
         return response.data;
     } catch (error) {

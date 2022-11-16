@@ -13,12 +13,32 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Accordion, AccordionDetails, AccordionSummary } from '@mui/material';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { Accordion, AccordionDetails, styled } from '@mui/material';
 import { selectContacts } from "redux/contacts/contactsSelectors";
 import LoadingBtn from "shared/button/LoadingButton";
+import MuiAccordionSummary from '@mui/material/AccordionSummary';
+import AddIcon from '@mui/icons-material/Add';
 
 const theme = createTheme();
+const AccordionSummary = styled((props) => (
+  <MuiAccordionSummary
+    expandIcon={<AddIcon />}
+    {...props}
+  />
+))(({ theme }) => ({
+  backgroundColor:
+    theme.palette.mode === 'dark'
+      ? 'rgba(255, 255, 255, .05)'
+      : 'rgba(0, 0, 0, .03)',
+  flexDirection: 'row',
+  '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
+    transform: 'rotate(45deg)',
+  },
+  '& .MuiAccordionSummary-content': {
+    marginLeft: theme.spacing(1),
+  },
+}));
+
 
 
 export default function ContactForm() {
@@ -31,6 +51,8 @@ const dispatch = useDispatch();
 
 const nameId = nanoid();
 const numberId = nanoid();
+
+  const [expanded, setExpanded] = React.useState(false);
 
 
 const handleChange = (evt) => {
@@ -50,18 +72,26 @@ const handleChange = (evt) => {
   
 const handleSubmit = (evt) => {
   evt.preventDefault();
-      onAddContact({ name, number });
+  onAddContact({ name, number });
+  
       setName("");
       setNumber("");
     }
 
 
-const onAddContact = (contact) => {
+const onAddContact = (contact, ) => {
   const action = addContact(contact);
-      console.log("contact", contact);
-
-      dispatch(action);
+  setExpanded(false);
+  dispatch(action);
 }
+  
+  const handleChangeAccordion = (event) => {
+        if (expanded === true) {
+            setExpanded(false);
+        } else {
+          setExpanded(true);
+        }
+  };
   
   return (
      <ThemeProvider theme={theme}>
@@ -75,16 +105,18 @@ const onAddContact = (contact) => {
               alignItems: 'center',
             }}
           >
-            <Accordion>
-              <AccordionSummary
-                 expandIcon={<ExpandMoreIcon />}
-                 aria-controls="panel1a-content"
-                 id="panel1a-header"
-               >
-              <Typography>Create New Contact</Typography>
-              </AccordionSummary>
-                <AccordionDetails>
-                <Box component="form"  onSubmit={handleSubmit} sx={{ mt: 1 }}>
+      <Accordion expanded={ expanded} onChange={handleChangeAccordion}>
+        <AccordionSummary
+          
+          aria-controls="panel1bh-content"
+          id="panel1bh-header"
+        >
+          <Typography sx={{ width: '100%', flexShrink: 0 }}>
+            Create New Contact
+          </Typography>
+            </AccordionSummary>
+              <AccordionDetails>
+                <Box component="form"  onSubmit={handleSubmit} >
                   <TextField
                 margin="normal"
                 size="small"
@@ -124,7 +156,7 @@ const onAddContact = (contact) => {
                   </Button>}
                 </Box>
               </AccordionDetails>
-           </Accordion>
+            </Accordion>
         </Box>
       </Grid>
     </Grid>

@@ -5,7 +5,10 @@ import ContactItem from 'components/Contacts/ContactList/ContactItem/ContactItem
 
 export default function ContactList({ items }) {
   return (
-    <List>
+    <List sx={{
+              display: 'flex',
+              flexDirection: 'column-reverse',
+            }}>
       {
         items.map(({ name, number, id }) => (
           <ContactItem key={id} id={id} name={name} phone={number} />

@@ -11,13 +11,11 @@ export default function ContactsPage() {
       <React.Fragment>
         <CssBaseline />
           <Grid container component="div"
-          xs={12}
           sx={{
             backgroundImage: `url(${contactsImg})`,
             backgroundRepeat: '#5858f4',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            // height: '100vh',
             minHeight: '500px',
             maxHeight: '1500px',
           }}
