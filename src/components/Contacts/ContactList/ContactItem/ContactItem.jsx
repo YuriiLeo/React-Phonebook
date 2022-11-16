@@ -46,10 +46,6 @@ export default function ContactItem({ id, name, phone }) {
             <span>{name}: </span>
             <span>{phone}</span>
        </Box> 
-            {/* <Button type='button' onClick={() => removeContact(id)} >Delete</Button> */}
-      {/* {isLoading ? <Button>Deleting...</Button> : <Button type='button' onClick={() => removeContact(id)} >Delete</Button>} */}
-            {/* <Button type='button' disabled={isLoading} onClick={() => removeContact(id)} >Delete</Button> */}
-            {/* <Button size="small" variant="outlined" startIcon={<DeleteIcon />} type='button' disabled={isLoading} onClick={() => removeContact(id)} /> */}
           <IconButton size="large" aria-label="delete" type='button' disabled={isLoading} onClick={() => removeContact(id)} >
             <DeleteIcon fontSize='small' />
           </IconButton>

@@ -8,20 +8,6 @@ import { signup } from 'redux/auth/authOperations';
 import { selectAuth } from 'redux/auth/authSelectors';
 import LoadingBtn from 'shared/button/LoadingButton';
 
-
-// function Copyright(props) {
-//   return (
-//     <Typography variant="body2" color="text.secondary" align="center" {...props}>
-//       {'Copyright © '}
-//       <Link color="inherit" href="https://mui.com/">
-//         Your Website
-//       </Link>{' '}
-//       {new Date().getFullYear()}
-//       {'.'}
-//     </Typography>
-//   );
-// }
-
 export default function SignUp() {
   const { loading } = useSelector(selectAuth);
   const dispatch = useDispatch();

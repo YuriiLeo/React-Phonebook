@@ -20,6 +20,7 @@ import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import AddIcon from '@mui/icons-material/Add';
 
 const theme = createTheme();
+
 const AccordionSummary = styled((props) => (
   <MuiAccordionSummary
     expandIcon={<AddIcon />}
@@ -39,8 +40,6 @@ const AccordionSummary = styled((props) => (
   },
 }));
 
-
-
 export default function ContactForm() {
   const { isLoading, error } = useSelector(selectContacts);
 
@@ -52,7 +51,7 @@ const dispatch = useDispatch();
 const nameId = nanoid();
 const numberId = nanoid();
 
-  const [expanded, setExpanded] = React.useState(false);
+const [expanded, setExpanded] = React.useState(false);
 
 
 const handleChange = (evt) => {
