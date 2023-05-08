@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/React-Phonebook/static/css/main.92892dc7.css",
-    "main.js": "/React-Phonebook/static/js/main.c66efdd6.js",
+    "main.js": "/React-Phonebook/static/js/main.f1b1b8bb.js",
     "static/js/680.01c1ef6d.chunk.js": "/React-Phonebook/static/js/680.01c1ef6d.chunk.js",
     "static/js/202.5f16002f.chunk.js": "/React-Phonebook/static/js/202.5f16002f.chunk.js",
     "static/js/643.cd0979e7.chunk.js": "/React-Phonebook/static/js/643.cd0979e7.chunk.js",
@@ -16,7 +16,7 @@
     "static/media/logIn.jpg": "/React-Phonebook/static/media/logIn.4aabf54c160e27255e91.jpg",
     "index.html": "/React-Phonebook/index.html",
     "main.92892dc7.css.map": "/React-Phonebook/static/css/main.92892dc7.css.map",
-    "main.c66efdd6.js.map": "/React-Phonebook/static/js/main.c66efdd6.js.map",
+    "main.f1b1b8bb.js.map": "/React-Phonebook/static/js/main.f1b1b8bb.js.map",
     "680.01c1ef6d.chunk.js.map": "/React-Phonebook/static/js/680.01c1ef6d.chunk.js.map",
     "202.5f16002f.chunk.js.map": "/React-Phonebook/static/js/202.5f16002f.chunk.js.map",
     "643.cd0979e7.chunk.js.map": "/React-Phonebook/static/js/643.cd0979e7.chunk.js.map",
@@ -29,6 +29,6 @@
   },
   "entrypoints": [
     "static/css/main.92892dc7.css",
-    "static/js/main.c66efdd6.js"
+    "static/js/main.f1b1b8bb.js"
   ]
 }
