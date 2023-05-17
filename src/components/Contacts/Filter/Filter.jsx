@@ -28,7 +28,7 @@ export default function Filter() {
             component={Paper}
             elevation={6} square
             sx={{
-              my: 5,
+              my: 6,
               mx: 5,
             }}>
           <Box

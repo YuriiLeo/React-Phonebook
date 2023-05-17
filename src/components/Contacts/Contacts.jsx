@@ -28,18 +28,16 @@ export default function Contacts() {
         <CssBaseline />
            <Box
             sx={{
-              my: 8,
-              // mx: 4,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
+              my: 12,
+            mx: 4,
+              textAlign: 'center'
             }}
             >
            {error && <p>{error}</p>}
             <Typography component="h1" variant="h5">
                 Contacts
             </Typography>
-               <Filter />
+          <Filter />
                  <ContactList items={contacts}  />
            {filter && !contacts.length && <Notification message="No contact on request"></Notification>}
            </Box>

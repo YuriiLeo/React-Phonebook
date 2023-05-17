@@ -27,7 +27,7 @@ export default function ContactsPage() {
             backgroundPosition: 'center',
             backgroundColor: 'rgba(117, 190, 218, 0.5)',
             marginTop: 8,
-            height: '90%',
+            height: '90vh',
           }}>
             <ContactForm/>
             <ToastContainer position="top-left" autoClose={3000} />

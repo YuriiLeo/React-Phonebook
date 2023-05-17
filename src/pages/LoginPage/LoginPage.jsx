@@ -4,6 +4,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Paper from '@mui/material/Paper';
 import React from 'react';
 import logIn from '../../shared/img/logIn.jpg';
+import { NavLink } from 'react-router-dom';
 
 
 const theme = createTheme();
@@ -49,8 +50,10 @@ export default function LoginPage() {
             </Typography>
                 <LoginForm />
                 <Grid item>
-                  <Link href="/goit-react-hw-08-phonebook/register" variant="body2">
-                    {"Don't have an account? Register"}
+              <Link variant="body2">
+                <NavLink to={'/register'}>
+                  {"Don't have an account? Register"}
+                  </NavLink>
                   </Link>
                 </Grid>
           </Box>

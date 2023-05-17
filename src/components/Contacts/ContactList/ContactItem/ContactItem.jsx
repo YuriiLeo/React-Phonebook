@@ -38,11 +38,13 @@ export default function ContactItem({ id, name, phone }) {
   return (
     <>
       <ListItem key={id} sx={{
-        padding: 0,
+        px: 0,
         justifyContent: 'space-between}',
       }}>
-        <ContactPhoneOutlinedIcon size={18}/>
-        <Box sx={{ marginLeft: '20px',}}>
+        <IconButton href="tel:+380937744581">
+           <ContactPhoneOutlinedIcon size={18}/>
+        </IconButton>
+        <Box sx={{ marginLeft: '20px'}}>
             <span>{name}: </span>
             <span>{phone}</span>
        </Box> 

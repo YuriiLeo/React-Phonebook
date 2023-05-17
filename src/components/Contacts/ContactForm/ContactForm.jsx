@@ -94,9 +94,9 @@ const onAddContact = (contact, ) => {
   
   return (
      <ThemeProvider theme={theme}>
-      <Grid container component="div"  sx={{marginTop: '30px'}} >
+      <Grid container component="div"  sx={{marginTop: '30px', position: 'relative'}} >
         <CssBaseline />
-          <Grid item borderRadius={1} xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+          <Grid item borderRadius={1} xs={12} sm={8} md={5} component={Paper} elevation={6} square sx={{position: 'absolute', zIndex: '12', width: '90vw' }}>
             <Box
             sx={{
               display: 'flex',

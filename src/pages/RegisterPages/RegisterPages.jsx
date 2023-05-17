@@ -2,6 +2,7 @@ import { Avatar, Box, createTheme, CssBaseline, Grid, Link, Paper, ThemeProvider
 import RergisterForm from 'components/RergisterForm/RergisterForm'
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import logIn from '../../shared/img/logIn.jpg';
+import { NavLink } from 'react-router-dom';
 
 const theme = createTheme();
 
@@ -42,10 +43,12 @@ export default function RegisterPages() {
               Register
             </Typography>
               <RergisterForm />
-              <Grid item>
-                  <Link href="/goit-react-hw-08-phonebook/login" variant="body2">
+            <Grid item>
+              <Link variant="body2">
+                  <NavLink to="/login" >
                     {"Do you have an account? Sign In"}
-                  </Link>
+              </NavLink>
+              </Link>
               </Grid>
           </Box>
         </Grid>

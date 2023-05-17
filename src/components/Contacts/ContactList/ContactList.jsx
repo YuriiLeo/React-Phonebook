@@ -7,7 +7,7 @@ export default function ContactList({ items }) {
   return (
     <List sx={{
               display: 'flex',
-              flexDirection: 'column-reverse',
+              flexDirection: 'column-reverse'
             }}>
       {
         items.map(({ name, number, id }) => (
