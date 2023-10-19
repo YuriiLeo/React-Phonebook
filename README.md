@@ -5,7 +5,7 @@
 
 This is a web application developed in React for managing your phonebook. It allows you to add, view, edit, and delete contacts. The app provides a user-friendly interface for managing your contacts effectively.
 
-![Phonebook App](/assets/phonebook_screenshot.png)
+![Phonebook App](/assets/phonebook_screen.png)
 
 ## Table of Contents
 

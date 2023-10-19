@@ -6,7 +6,7 @@
 
 . Додаток надає користувачам зручний інтерфейс для ефективного управління контактами.
 
-![Додаток Phonebook](/assets/phonebook_screenshot.png)
+![Phonebook App](/assets/phonebook_screen.png)
 
 ## Зміст
 
