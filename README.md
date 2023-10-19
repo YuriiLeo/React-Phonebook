@@ -1,102 +1,49 @@
-**Read in other languages: [Русский](README.md), [Polska](README.pl.md).**
 
-# React homework template
+# Phonebook React App
 
-Этот проект был создан при помощи
-[Create React App](https://github.com/facebook/create-react-app). Для знакомства
-и настройки дополнительных возможностей
-[обратись к документации](https://facebook.github.io/create-react-app/docs/getting-started).
+## Description
 
-## Подготовка нового проекта
+This is a web application developed in React for managing your phonebook. It allows you to add, view, edit, and delete contacts. The app provides a user-friendly interface for managing your contacts effectively.
 
-1. Убедись что на компьютере установлена LTS-версия Node.js.
-   [Скачай и установи](https://nodejs.org/en/) её если необходимо.
-2. Склонируй этот репозиторий.
-3. Измени имя папки с `react-homework-template` на имя своего проекта.
-4. Создай новый пустой репозиторий на GitHub.
-5. Открой проект в VSCode, запусти терминал и свяжи проект с GitHub-репозиторием
-   [по инструкции](https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories#changing-a-remote-repositorys-url).
-6. Установи базовые зависимости проекта командой `npm install`.
-7. Запусти режим разработки, выполнив команду `npm start`.
-8. Перейди в браузере по адресу [http://localhost:3000](http://localhost:3000).
-   Эта страница будет автоматически перезагружаться после сохранения изменений в
-   файлах проекта.
+![Phonebook App](/assets/phonebook_screenshot.png)
 
-## Деплой
+## Table of Contents
 
-Для настройки деплоя проекта необходимо выполнить несколько дополнительных шагов
-по настройке твоего репозитория. Зайди во вкладку `Settings` и в подсекции
-`Actions` выбери выбери пункт `General`.
+- [Usage](#usage)
+- [Scripts](#scripts)
+- [Dependencies](#dependencies)
 
-![GitHub actions settings](./assets/actions-config-step-1.png)
+## Usage
 
-Пролистай страницу до последней секции, в которой выбери опции как на следующем
-изображении и нажми `Save`. Без этих настроек у сборки будет недостаточно прав
-для автоматизации процесса деплоя.
+You can use this project to maintain your phonebook. To get started, follow these steps:
 
-![GitHub actions settings](./assets/actions-config-step-2.png)
+1. Clone the repository to your local machine.
+2. Install the project dependencies using `npm install`.
+3. Start the development server with `npm start`.
+4. Open the app in your web browser at [http://localhost:3000](http://localhost:3000).
 
-Продакшн версия проекта будет автоматически проходить линтинг, собираться и
-деплоиться на GitHub Pages, в ветку `gh-pages`, каждый раз когда обновляется
-ветка `main`. Например, после прямого пуша или принятого пул-реквеста. Для этого
-необходимо в файле `package.json` отредактировать поле `homepage`, заменив
-`your_username` и `your_repo_name` на свои, и отправить изменения на GitHub.
+## Scripts
 
-```json
-"homepage": "https://your_username.github.io/your_repo_name/"
-```
+This project includes the following scripts:
 
-Далее необходимо зайти в настройки GitHub-репозитория (`Settings` > `Pages`) и
-выставить раздачу продакшн версии файлов из папки `/root` ветки `gh-pages`, если
-это небыло сделано автоматически.
+- `start`: Starts the development server.
+- `build`: Builds the app for production.
+- `test`: Runs tests.
+- `eject`: Ejects from Create React App.
+- `lint:js`: Lints JavaScript and JSX files.
 
-![GitHub Pages settings](./assets/repo-settings.png)
+This project uses the following dependencies:
 
-### Статус деплоя
+- [react](https://reactjs.org/): A JavaScript library for building user interfaces.
+- [react-dom](https://www.npmjs.com/package/react-dom): Provides DOM-specific methods for React.
+- [react-redux](https://www.npmjs.com/package/react-redux): Official React bindings for Redux.
+- [react-router-dom](https://www.npmjs.com/package/react-router-dom): DOM bindings for React Router.
+- [redux](https://www.npmjs.com/package/redux): Predictable state container for JavaScript applications.
+- [redux-persist](https://www.npmjs.com/package/redux-persist): Persist and rehydrate a Redux store.
+- [@mui/material](https://www.npmjs.com/package/@mui/material): Material-UI core library.
+- [@redux-devtools/extension](https://www.npmjs.com/package/@redux-devtools/extension): Browser extension for Redux DevTools.
+- [@reduxjs/toolkit](https://www.npmjs.com/package/@reduxjs/toolkit): Utility library for Redux.
+- [axios](https://www.npmjs.com/package/axios): Promise-based HTTP client for making requests.
+- [nanoid](https://www.npmjs.com/package/nanoid): A tiny, secure, URL-friendly unique string ID generator.
 
-Статус деплоя крайнего коммита отображается иконкой возле его идентификатора.
 
-- **Желтый цвет** - выполняется сборка и деплой проекта.
-- **Зеленый цвет** - деплой завершился успешно.
-- **Красный цвет** - во время линтинга, сборки или деплоя произошла ошибка.
-
-Более детальную информацию о статусе можно посмотреть кликнув по иконке, и в
-выпадающем окне перейти по ссылке `Details`.
-
-![Deployment status](./assets/status.png)
-
-### Живая страница
-
-Через какое-то время, обычно пару минут, живую страницу можно будет посмотреть
-по адресу указанному в отредактированном свойстве `homepage`. Например, вот
-ссылка на живую версию для этого репозитория
-[https://goitacademy.github.io/react-homework-template](https://goitacademy.github.io/react-homework-template).
-
-Если открывается пустая страница, убедись что во вкладке `Console` нет ошибок
-связанных с неправильными путями к CSS и JS файлам проекта (**404**). Скорее
-всего у тебя неправильное значение свойства `homepage` в файле `package.json`.
-
-### Маршрутизация
-
-Если приложение использует библиотеку `react-router-dom` для маршрутизации,
-необходимо дополнительно настроить компонент `<BrowserRouter>`, передав в пропе
-`basename` точное название твоего репозитория. Слеши в начале и конце строки
-обязательны.
-
-```jsx
-<BrowserRouter basename="/your_repo_name/">
-  <App />
-</BrowserRouter>
-```
-
-## Как это работает
-
-![How it works](./assets/how-it-works.png)
-
-1. После каждого пуша в ветку `main` GitHub-репозитория, запускается специальный
-   скрипт (GitHub Action) из файла `.github/workflows/deploy.yml`.
-2. Все файлы репозитория копируются на сервер, где проект инициализируется и
-   проходит линтинг и сборку перед деплоем.
-3. Если все шаги прошли успешно, собранная продакшн версия файлов проекта
-   отправляется в ветку `gh-pages`. В противном случае, в логе выполнения
-   скрипта будет указано в чем проблема.

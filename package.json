@@ -1,8 +1,8 @@
 {
-  "name": "React-Phonebook",
+  "name": "phonebook_react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://yuriileo.github.io/React-Phonebook/",
+  "homepage": "https://yuriileo.github.io/phonebook_react/",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
